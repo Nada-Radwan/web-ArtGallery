@@ -9,7 +9,7 @@
         SqlConnection conn = new SqlConnection();
             conn.ConnectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|Student.mdf;Integrated Security=True";
 
-            string strSelect = "SELECT * FROM signin " + "WHERE Fname = '" + TxtUname.Text + "'AND Pass = '" + TxtPass.Text + "'";
+            string strSelect = "SELECT * FROM Member " + "WHERE Email = '" + txtEmail.Text + "'AND Password = '" + txtPass.Text + "'";
 
             SqlCommand cmdSelect = new SqlCommand(strSelect, conn);
 
