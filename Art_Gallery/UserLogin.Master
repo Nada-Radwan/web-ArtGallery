@@ -1,0 +1,441 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="UserMaster1.master.cs" Inherits="Art_Gallery.UserMaster1" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <link href="Style2.css" rel="stylesheet">
+        <link href="Style3.css" rel="stylesheet">
+            <link href="Style4.css" rel="stylesheet">
+
+    <style>
+        /*Master Style*/
+        .navbar {
+    width: 85%;
+    /*float:right;*/
+    margin: auto;
+    padding: 0px 0;
+    display: flex;
+    align-items: center; /*put (home art work....in the center)*/
+    justify-content: flex-end;
+}
+
+.webart {
+    float:left;
+    width: 100px;
+    cursor: pointer;
+}
+.navbar ul li {
+    list-style: none;
+    display: inline-block;
+    margin: 0 10px;
+    position: relative; /*relative to (ul li:after) to make underline below home artwork....*/
+}
+.navbar ul li a{
+  text-decoration: none;
+  color:rgba(0,0,0,0.75); /*words color*/
+  text-transform:uppercase;
+
+}
+.navbar ul li::after {
+    content: '';
+    height: 3px;
+    width: 0%; /*To hide the line*/
+    background: #e88ec1;/*line color*/
+    position:absolute;
+    left:0;
+    bottom:-10px; /*to make the line a little down*/
+    transition:0.5s; /*the speed of the line movement*/
+}
+.navbar ul li:hover::after{
+    width:100%; /*make the line move from left to right when the mouth moves on it*/
+
+
+
+}
+.banner {
+    width: 100%;
+    height: 100vh;
+    /*background-color:antiquewhite;*/
+    background-image: linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)),url(mint.jpg);
+    background-size: cover;
+    background-position: center;
+}
+.navbarr {
+    /*width: 85px;*/
+     /*float: right;*/
+    margin: auto;
+   
+    padding:0px 0px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /*justify-content: space-evenly;*/
+    
+    
+    
+}
+.webart {
+    width: 100px;
+    cursor: pointer;
+}
+.navbarr ul li {
+    list-style: none;
+    display: inline-block;
+    margin: 0 20px;
+    position: relative; /*relative to (ul li:after) to make underline below home artwork....*/
+}
+
+.navbarr ul li a {
+        text-decoration: none;
+        color: #FFF;
+        text-transform: uppercase;
+    }
+
+.navbarr ul li::after {
+        content: '';
+        height: 3px;
+        width: 0%; /*To hide the line*/
+        background: #e88ec1;
+        position: absolute;
+        left: 0;
+        bottom: -10px; /*to make the line a little down*/
+        transition: 0.5s; /*the speed of the line movement*/
+    }
+
+.navbarr ul li:hover::after {
+        width: 100%; /*make the line move from left to right when the mouth moves on it*/
+    }
+
+
+         .auto-style22 {
+              width:385px;
+            height: 352px;
+             display: block;
+             margin-left: auto;
+             margin-right: auto;
+             width:84%;
+        }
+        .auto-style21 {
+           width:385px;
+            height: 352px;
+             display: block;
+             margin-left: auto;
+             margin-right: auto;
+             width:84%;
+        }
+       
+        .auto-style11 {
+             width:385px;
+            height: 352px;
+             display: block;
+             margin-left: auto;
+             margin-right: auto;
+             width:84%;
+        }
+        .auto-style9 {
+            width:385px;
+            height: 352px;
+             display: block;
+             margin-left: auto;
+             margin-right: auto;
+             width:84%;
+        }
+       
+      
+        .auto-style12 {
+             width:385px;
+            height: 352px;
+             display: block;
+             margin-left: auto;
+             margin-right: auto;
+             width:84%;
+        }
+        .auto-style13 {
+            width:385px;
+            height: 352px;
+             display: block;
+             margin-left: auto;
+             margin-right: auto;
+             width:84%;
+        }
+      
+        .auto-style17 {
+             width:385px;
+            height: 352px;
+             display: block;
+             margin-left: auto;
+             margin-right: auto;
+             width:84%;
+        }
+        .auto-style18 {
+            width:385px;
+            height: 352px;
+             display: block;
+             margin-left: auto;
+             margin-right: auto;
+             width:84%;
+        }
+        .auto-style19 {
+             width:385px;
+            height: 352px;
+             display: block;
+             margin-left: auto;
+             margin-right: auto;
+             width:84%;
+        }
+
+       
+
+       
+
+        
+        .auto-style24 {
+            width: 539px;
+        }
+        .auto-style25 {
+            width: 855px;
+        }
+        .auto-style26 {
+            width: 448px;
+        }
+
+       
+
+       
+
+        .auto-style27 {
+            width: 1369px;
+            height: 358px;
+        }
+
+       
+
+       
+
+        .auto-style28 {
+            margin-left: 0px;
+            margin-top: 0px;
+        }
+        .auto-style29 {
+            height: 141px;
+            text-align: center;
+        }
+        /*a
+        a
+        a
+        a
+        a*/
+        /*LogIn Style*/
+         
+         .nav-right {
+            float: right;
+        }
+
+        #id {
+            text-align: center;
+            color: rgb(245, 42, 154);
+            text-transform: uppercase;
+            font-size: 32px;
+            background-color: rgb(255, 247, 248);
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        /*h3 {
+            text-align: center;
+            color: rgb(255, 59, 180);
+            text-transform: lowercase;
+            font-size: 32px;
+            background-color: rgb(255, 247, 248);
+            font-family: Arial, Helvetica, sans-serif;
+        }*/
+        /*the pink background*/
+        /*body {
+            background-image: url(https://pbs.twimg.com/media/EXT-mS4WkAAl9D7.jpg);
+            background-repeat: no-repeat;
+            background-size: 60cm;
+            background-position: center;
+        }*/
+
+     
+
+       
+
+        .searchbar {
+            width: 35%;
+            padding: 0px;
+            margin: 0px 0px 8px 8px;
+            border-radius: 15px;
+            border: 1px;
+            border-style: solid;
+            border-color: rgb(255, 119, 214);
+        }
+
+            .searchbar:hover {
+                box-shadow: 5px 3px 5px rgb(255, 81, 110);
+            }
+
+        .searchbox {
+            padding: 9px 9px;
+            margin: 0px 2px;
+            width: 100%;
+            border: none;
+            outline: none;
+            border-radius: 15px;
+        }
+
+        table#fam {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        tr {
+            text-align: center;
+            font-size: 25px;
+        }
+
+        thead {
+            background-color: deeppink;
+            color: rgb(255, 255, 255);
+        }
+
+        #bs tr:nth-child(even) {
+            background-color: rgb(255, 196, 208);
+        }
+
+        form {
+            font-size: 19px;
+        }
+
+        /*body {
+            font-family: helvetica;
+            background-color: whitesmoke;
+        }*/
+
+        .text {
+            background-color: deeppink;
+            border: none;
+            border-radius: 6px;
+            font-size: 21px;
+            line-height: 48px;
+            padding: 0 16px;
+            width: 332px;
+        }
+        
+        #best {
+            text-align: center;
+            font-size: 20px;
+        }
+        .font {
+            border-radius: 6px;
+            font-size: 21px;
+            padding: 0px 16px;
+            line-height: 48px;
+            width: 332px;
+            border: 1px solid rgba(128, 128, 128, 431);
+        }
+
+        #best {
+            text-align: center;
+            font-size: 20px;
+        }
+
+        .bad {
+            background-color: #ff7ddf;
+            border: none;
+            border-radius: 6px;
+            font-size: 21px;
+            line-height: 48px;
+            padding: 0 16px;
+            width: 332px;
+        }
+
+        .done {
+            margin: 80px auto;
+            padding: 40px;
+            background-color: #fff;
+            box-shadow: 0 2px 6px rgb(245, 121, 189),0 2px 6px rgb(255, 87, 185);
+            border-radius: 20px;
+        }
+
+        .toz {
+            font-size: 45px;
+            color: deeppink;
+            font-weight: bolder;
+            cursor: pointer;
+        }
+
+        .button {
+            border: none;
+            padding: 15px 30px;
+            background-color: deeppink;
+            color: white;
+            font-size: 15px;
+            display: inline-block;
+        }
+
+        /*input[type=text], [type=date], [type=tel], select, textarea {
+            width: 50%;
+            padding: 10px 15px;
+            margin: 8px;
+            font-size: 15px;
+            border-radius: 6px;
+            border: 1px solid rgba(128, 128, 128, 431);
+        }
+
+        fieldset {
+            margin: 20px;
+        }
+
+        p {
+            font-family: 'Times New Roman', Times, serif;
+            letter-spacing: 1px;
+            margin: 15px;
+        }*/
+
+        /*.searchicon {
+            padding-top: 0px;
+            fill: #a7a7a7;
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+        }*/
+
+        
+        
+
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+             <div class="navbar">
+            <!-- signin-->
+            
+            <ul>
+                 <img src="webart.jpg" class="webart" />
+                
+                      
+                <li> <a href="Home2.aspx">Home</a></li>
+                <li><a href="GradualArt2.aspx">Gradual Art Murals</a></li>
+                <li><a href="Islamic.aspx">Islamic paintaing</a></li>
+                <li><a href="Nature.aspx">Nature paintings</a></li>
+
+                <li> <a href="#">Offers</a></li>
+                <li> <a href="LogInContent.aspx">Log Out</a></li>
+                
+                <li> <a href="UWish.aspx">Design you wish</a></li>
+                <li> <a href="FeedBack.aspx">FeedBack</a></li>
+               
+
+            </ul>
+        </div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </form>
+</body>
+</html>

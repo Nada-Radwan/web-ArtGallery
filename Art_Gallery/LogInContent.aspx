@@ -5,8 +5,7 @@
 
 
     protected void btnLogin_Click(object sender, EventArgs e)
-    {
-        SqlConnection conn = new SqlConnection();
+    {SqlConnection conn = new SqlConnection();
         //conn.ConnectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|Student.mdf;Integrated Security=True";
         conn.ConnectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|ArtGallery.mdf;Integrated Security=True";
         string strSelect = "SELECT * FROM Member " + "WHERE Email = '" + txtEmail.Text + "'AND Password = '" + txtPass.Text + "'";
@@ -20,16 +19,19 @@
         reader = cmdSelect.ExecuteReader();
 
         if (reader.Read())
-            Response.Redirect("~/GradualArt1.aspx");
+            Response.Redirect("~/Home2.aspx");
         else
-            Label1.Text = "Not found";
+            Label1.Text = "Email or Password is in correct";
 
         conn.Close();
+
     }
 
 
-    protected void Button1_Click(object sender, EventArgs e)
+
+    protected void btnAccount_Click(object sender, EventArgs e)
     {
+        Response.Redirect("~/SignupContent.aspx");
 
     }
 </script>
@@ -59,9 +61,7 @@
                         </tr>
                         <tr>
                             <td class="auto-style2">
-                                <asp:Button  ID="btnLogin"  CssClass="text" runat="server" Text="Login" PostBackUrl="~/index.html" OnClick="btnLogin_Click" />&nbsp;<br />
-                                <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="login" />
-                                <br />
+                                <asp:Button  ID="btnLogin"  CssClass="text" runat="server" Text="Login"  OnClick="btnLogin_Click" />&nbsp;<br />
                             </td>
 
                         </tr>
@@ -71,7 +71,7 @@
                         </tr>
                         <tr>
                             <td class="auto-style2">
-                                <asp:Button ID="btnAccount" runat="server" CssClass="bad" Text="Create New Account" />
+                                <asp:Button ID="btnAccount" runat="server" CssClass="bad" Text="Create New Account" OnClick="btnAccount_Click" CausesValidation="False" ValidateRequestMode="Disabled" ViewStateMode="Disabled" />
                             </td>
 
                         </tr>
