@@ -19,7 +19,13 @@
         reader = cmdSelect.ExecuteReader();
 
         if (reader.Read())
-            Response.Redirect("~/Home2.aspx");
+            {
+                if(txtEmail.Text=="Admin@gmail.com")
+                   Response.Redirect("~/HomeAdmin.aspx");
+                else
+                Response.Redirect("~/Home2.aspx");
+            }
+
         else
             Label1.Text = "Email or Password is in correct";
 
@@ -43,8 +49,8 @@
 
 
 
-                    <table class="done">
-                        <tr><td class="auto-style2"><p class="toz">Art Gallery</p></td></tr>
+                    <table class="doneL">
+                        <tr><td class="auto-style2L"><p class="tozL">Art Gallery</p></td></tr>
                         <tr>
                             <td class="auto-style2">&nbsp;<asp:TextBox ID="txtEmail" runat="server" CssClass="auto-style1" placeholder="Email address" Width="337px" Height="32px"></asp:TextBox>
                                 <br />
@@ -54,14 +60,14 @@
                         </tr>
                         <tr>
                             <td class="auto-style2">
-                                <asp:TextBox ID="txtPass" runat="server" Height="32px" CssClass="auto-style1" placeholder=" password" Width="337px"></asp:TextBox>
+                                <asp:TextBox ID="txtPass" runat="server" Height="32px" CssClass="auto-style1" placeholder=" password" Width="337px" TextMode="Password"></asp:TextBox>
                                 <br />
                     <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ControlToValidate="txtPass" ErrorMessage="This is a required field!!" Font-Names="Arial" Font-Size="Small" ForeColor="#CC0000"></asp:RequiredFieldValidator>
                             </td>
                         </tr>
                         <tr>
                             <td class="auto-style2">
-                                <asp:Button  ID="btnLogin"  CssClass="text" runat="server" Text="Login"  OnClick="btnLogin_Click" />&nbsp;<br />
+                                <asp:Button  ID="btnLogin"  CssClass="bad" runat="server" Text="Login"  OnClick="btnLogin_Click" />&nbsp;<br />
                             </td>
 
                         </tr>

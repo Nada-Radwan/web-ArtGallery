@@ -7,11 +7,12 @@
     <title></title>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
-    <link href="Style2.css" rel="stylesheet">
-        <link href="Style3.css" rel="stylesheet">
-            <link href="Style4.css" rel="stylesheet">
+                <link href="Style4.css" rel="stylesheet">
 
     <style>
+        .auto-style2H {
+    height: 78px;
+}
         /*Master Style*/
         .navbar {
     width: 85%;
@@ -36,7 +37,7 @@
 }
 .navbar ul li a{
   text-decoration: none;
-  color:rgba(0,0,0,0.75); /*words color*/
+  color:black; /*words color*/
   text-transform:uppercase;
 
 }
@@ -408,6 +409,10 @@
         
 
     </style>
+    <link href="Style2.css" rel="stylesheet">
+        <link href="Style3.css" rel="stylesheet">
+      <link href="feedback.css" rel="stylesheet">
+
 </head>
 <body>
     <form id="form1" runat="server">
@@ -421,14 +426,15 @@
                       
                 <li> <a href="Home2.aspx">Home</a></li>
                 <li><a href="GradualArt2.aspx">Gradual Art Murals</a></li>
-                <li><a href="Islamic.aspx">Islamic paintaing</a></li>
+                <li><a href="IslamicContent.aspx">Islamic paintaing</a></li>
                 <li><a href="Nature.aspx">Nature paintings</a></li>
 
-                <li> <a href="#">Offers</a></li>
-                <li> <a href="LogInContent.aspx">Log Out</a></li>
                 
                 <li> <a href="UWish.aspx">Design you wish</a></li>
+                <li> <a href="ContactUs.aspx
+                    ">Contact us</a></li>
                 <li> <a href="FeedBack.aspx">FeedBack</a></li>
+                 <li> <a href="LogInContent.aspx">Log Out</a></li>
                
 
             </ul>

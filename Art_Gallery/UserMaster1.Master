@@ -7,7 +7,6 @@
     <title></title>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
-    <link href="Style1.css" rel="stylesheet">
                         <link href="Style4.css" rel="stylesheet">
 
 
@@ -36,7 +35,7 @@
 }
 .navbar ul li a{
   text-decoration: none;
-  color:rgba(0,0,0,0.75); /*words color*/
+  color:black; /*words color*/
   text-transform:uppercase;
 
 }
@@ -353,7 +352,7 @@
             width: 332px;
         }
 
-        .done {
+        .doneL {
             margin: 80px auto;
             padding: 40px;
             background-color: #fff;
@@ -361,7 +360,7 @@
             border-radius: 20px;
         }
 
-        .toz {
+        .tozL {
             font-size: 45px;
             color: deeppink;
             font-weight: bolder;
@@ -407,12 +406,14 @@
 
 
     </style>
+        <link href="Style1.css" rel="stylesheet">
+
 </head>
 <body>
     <form id="form1" runat="server">
         <div>
              <div class="navbar">
-            <!-- signin-->
+           
             
             <ul>
                  <img src="webart.jpg" class="webart" />
@@ -420,10 +421,11 @@
                       
                 <li> <a href="Home1.aspx">Home</a></li>
                 <li><a href="GradualArt1.aspx">Gradual Art Murals</a></li>
-                <li><a href="Islamic.aspx">Islamic paintaing</a></li>
+                <li><a href="IslamicContent.aspx">Islamic paintaing</a></li>
                 <li><a href="Nature.aspx">Nature paintings</a></li>
 
-                <li> <a href="#">Offers</a></li>
+                <li> <a href="ContactUs.aspx
+                    ">Contact us</a></li>
                 <li> <a href="LogInContent.aspx">Log In</a></li>
                 <li> <a href="SignupContent.aspx">Sign Up</a> </li>
                

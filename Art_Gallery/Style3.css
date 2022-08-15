@@ -35,7 +35,7 @@ h3 {
 }
 
 body {
-    background-image: url(https://pbs.twimg.com/media/EXT-mS4WkAAl9D7.jpg);
+    background-image: linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)),url(mint.jpg);
     background-repeat: no-repeat;
     background-size: 60cm;
     background-position: center;

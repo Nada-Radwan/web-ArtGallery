@@ -7,40 +7,53 @@
    
 </script>
 
-<asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
+<asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">'
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
 <%@ Import Namespace="System.Data.SqlClient" %>
     <script runat="server">
+            
+        protected void btnSubmit_Click(object sender, EventArgs e)
+        {
 
-    protected void btnSubmit_Click(object sender, EventArgs e)
-    {
-        //1-Create connection object
-        SqlConnection conn = new SqlConnection();
-        conn.ConnectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|ArtGallery.mdf;Integrated Security=True";
-     
-        //2-create insert statment
-        // string strInsert = String.Format("INSERT INTO Member VALUES('{0}', '{1}', '{2}', '{3}', '{4}', '{5}', '{6}', '{7}')", txtFname.Text, txtLname.Text, rblGender.SelectedValue, txtEmail.Text, txtPhone.Text, ddlCountry.SelectedValue, txtUsename.Text, txtPass.Text);
+            //1-Create connection object
+            SqlConnection conn = new SqlConnection();
+            conn.ConnectionString = "Data Source=(LocalDB)\\MSSQL\\LocalDB;AttachDbFilename=|DataDirectory|ArtGallery.mdf;Integrated Security=True";
 
-        string strInsert = String.Format("INSERT INTO Member VALUES('{0}','{1}','{2}','{3}','{4}','{5}','{6}','{7}')",txtFname.Text,txtLname.Text,rblGender.SelectedValue,txtEmail.Text,txtPhone.Text,ddlCountry.SelectedValue,txtUsename.Text,txtPass.Text);
-        
-        //3-create SQL command
-        SqlCommand cmdInsert = new SqlCommand(strInsert, conn);
+            //2-create insert statment
+            // string strInsert = String.Format("INSERT INTO Member VALUES('{0}', '{1}', '{2}', '{3}', '{4}', '{5}', '{6}', '{7}')", txtFname.Text, txtLname.Text, rblGender.SelectedValue, txtEmail.Text, txtPhone.Text, ddlCountry.SelectedValue, txtUsename.Text, txtPass.Text);
 
-        //4-open database
-        conn.Open();
+            string strInsert = String.Format("INSERT INTO Member VALUES('{0}','{1}','{2}','{3}','{4}','{5}','{6}','{7}')",txtFname.Text,txtLname.Text,rblGender.SelectedValue,txtEmail.Text,txtPhone.Text,ddlCountry.SelectedValue,txtUsename.Text,txtPass.Text);
 
-        //5-execute the sql command
-        cmdInsert.ExecuteNonQuery();
+            //3-create SQL command
+            SqlCommand cmdInsert = new SqlCommand(strInsert, conn);
+            try
+            {
+                //4-open database
+                conn.Open();
 
-        //6-close database
-        conn.Close();
+                //5-execute the sql command
+                cmdInsert.ExecuteNonQuery();
 
-        lblMsg.Text = "Welcome " + txtFname.Text + ", Your Account has been Successfully Created!!";
-        //7-save user profile picture
-        if (fupPic.HasFile)
-            fupPic.SaveAs(Server.MapPath("UserPic") + "\\" + txtUsename.Text + "jpg");
-    }
+                //6-close database
+                conn.Close();
+
+                lblMsg.Text = "Welcome " + txtFname.Text + ", Your Account has been Successfully Created!!";
+                //7-save user profile picture
+                if (fupPic.HasFile)
+                    fupPic.SaveAs(Server.MapPath("UserPic") + "\\" + txtUsename.Text + "jpg");
+            }
+            catch(SqlException error)
+            {
+                if (error.Number == 2627)
+                {
+                    lblMsg.Text = "The username" + UserName.Text + " is already used!";
+                  
+                }
+                  else
+                        lblMsg.Text = "Sorry! database problem, please try later.";
+            }
+        }
 </script>
     <table class="auto-style60S" class="auto-style1S" style="border-style: none; border-color: #CC0099; background-color: #FFFFFF">
             <tr>
@@ -184,7 +197,7 @@
             </tr>
             <tr>
                 <td class="auto-style50S">
-                    <asp:Button ID="btnSubmit" CssClass="text"  runat="server" BorderStyle="Solid" Font-Bold="True" Font-Names="Arial" Font-Size="Medium" ForeColor="#993366" OnClick="btnSubmit_Click" Text="Submit" Height="51px" Width="115px" />
+                    <asp:Button ID="btnSubmit" CssClass="textL"  runat="server" BorderStyle="Solid" Font-Bold="True" Font-Names="Arial" Font-Size="Medium" ForeColor="#993366" OnClick="btnSubmit_Click" Text="Submit" Height="51px" Width="115px" />
                 </td>
                 <td class="auto-style56S"></td>
                 <td class="auto-style20S"></td>
